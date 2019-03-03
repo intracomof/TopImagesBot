@@ -6,7 +6,7 @@
  * Time: 16:46
  */
 
-class TelegramBot
+class TelegramBot implements BotInterface
 {
     const TYPE_POST = 'post';
     const TYPE_GET = 'get';
@@ -34,7 +34,7 @@ class TelegramBot
     /**
      *
      */
-    public function getWebhook()
+    public function receiveWebhook()
     {
         $body = json_decode(file_get_contents('php://input'), true);
         $this->setInputMessage(new InputMessage($body));
@@ -67,6 +67,11 @@ class TelegramBot
     public function sendPhoto()
     {
         $this->_call('/sendPhoto', $this->_outputPhotoMessage->toArray());
+    }
+
+    public function sendMessage()
+    {
+        $this->_call('/sendMessage', $this->_outputPhotoMessage->toArray());
     }
 
     /**

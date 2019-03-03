@@ -8,9 +8,9 @@
 
 class Config
 {
-    public static $telegramApiKey = 'TELEGRAM_BOT_API_KEY';
-    public static $googleApiKey = 'GOOGLE_API_KEY';
+    public static $telegramApiKey = '765893094:AAGVXeivqFhQUOmfWuobogRSMC4Vh4yUoRU';
+    public static $googleApiKey = 'AIzaSyAuvjKOBk-47yVof17uaV3lkWyVsiXTlw4';
     /** @var string Google Custom Search Engine ID */
-    public static $googleCx = 'GOOGLE_CX_ID';
-    public static $bingApiKey = 'BING_SUBSCRIPTION_KEY';
+    public static $googleCx = '014892973351494446937:b-2k-48mrzg';
+    public static $bingApiKey = '431ddf65c7984baba6dbd48dfef0dac8';
 }

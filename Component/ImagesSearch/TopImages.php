@@ -35,10 +35,11 @@ class TopImages
             foreach($this->_bingImages as $bImage) {
                 if($gImage->getLink() == $bImage->getLink()) {
                     $newPosition = ($gImage->getPosition() + $bImage->getPosition())/2;
-                    print_r($this->_bingImages->key());
                     $this->_topImages->addImage(new Image($newPosition, $gImage->getLink()));
                 }
             }
         }
+        $this->_topImages->sortByPosition();
+        $this->_topImages->slice(0, $this->_maxImgCount);
     }
 }

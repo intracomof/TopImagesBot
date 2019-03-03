@@ -50,4 +50,20 @@ class ImageCollection implements Iterator, Countable
         return isset($this->images[$this->currentIndex]);
     }
 
+    public function sortByPosition()
+    {
+        usort($this->images, function($first, $second){
+            /** @var Image $second  */
+            /** @var Image $first  */
+            return $first->getPosition() > $second->getPosition();
+        });
+
+        $this->rewind();
+    }
+
+    public function slice($offset, $length)
+    {
+        $this->images = array_slice($this->images, $offset, $length);
+    }
+
 }
